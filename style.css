@@ -1,46 +1,68 @@
+:root {
+    --primary-color: #4d9fec; /* Vibrant Blue */
+    --background-color: #0A2647; /* Near-Black */
+    --text-color: #e0e0e0; /* Light Gray */
+    --secondary-color: #000c28; /* Dark Gray */
+    --accent-color: #3b82f6; /* Different Shade of Blue */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
 }
 
-header {
-    background-color: #004d40;
-    color: #fff;
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     padding: 1rem;
     text-align: center;
 }
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+nav {
+    display: inline-block;
+}
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-right: 20px; /* Spacing between items */
 }
 
+/* Styling the navigation links */
 nav ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
 }
 
 section {
     padding: 2rem;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #004d40;
-    color: #fff;
-}
-
 button {
-    background-color: #00695c;
+    background-color: #003366;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -49,5 +71,63 @@ button {
 }
 
 button:hover {
-    background-color: #00796b;
+    background-color: #003366;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.project-item a {
+    text-decoration: none;
+    color: inherit; /* Keeps text color consistent */
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-item h3 {
+    margin-top: 0.5em; /* Adjust spacing as needed */
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .image-gallery {
+        grid-template-columns: 1fr; /* Stack images on smaller screens */
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.logo img {
+    /* set the height to be the height of the header */
+    height: 100;
+
+    width: auto;
+}
+
+.main-content {
+    background-color: var(--background-color); /* Lighter color for the main content */
+    margin: 0 auto; /* Center the content on the page */
+    max-width: 85%; /* Adjust width as needed */
+    min-width: 60%;
+    padding: 20px; /* Adds space inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: adds depth */
 }
