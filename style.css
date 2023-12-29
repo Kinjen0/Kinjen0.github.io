@@ -131,3 +131,14 @@ button:hover {
     padding: 20px; /* Adds space inside the container */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: adds depth */
 }
+
+a:link {
+    color: cyan;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
